@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 12:55:56 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/04 17:36:43 by juramos          ###   ########.fr       */
+/*   Created: 2024/06/05 10:08:41 by juramos           #+#    #+#             */
+/*   Updated: 2024/06/05 10:34:22 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "includes/phonebook.hpp"
 
 int	main (void)
 {
-	std::string	comm;
 	PhoneBook	pb;
+	std::string	input = "";
 
-	while (true)
+	pb.welcome();
+	while (1)
 	{
-		std::cout << "Enter the desired command: ";
-		std::cin >> comm;
-		if (comm.compare("ADD") == 0)
+		std::cout << "> ";
+		getline(std::cin, input);
+		if (!input.compare("ADD"))
 			pb.add_contact();
-		// else if (comm.compare("SEARCH") == 0)
-		// 	pb.search_contact();
-		else if (comm.compare("EXIT") == 0)
+		else if (!input.compare("SEARCH"))
+			pb.search_contact();
+		else if (!input.compare("EXIT"))
+		{
+			std::cout << "Goodbye soldier 🫡" << std::endl;
 			return (EXIT_SUCCESS);
+		}
+		else
+			std::cout << "Invalid input. Please, try again." << std::endl;
 	}
-	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 12:57:03 by juramos           #+#    #+#              #
-#    Updated: 2024/06/04 17:24:20 by juramos          ###   ########.fr        #
+#    Updated: 2024/06/05 11:31:59 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME 		= 	phonebook
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98
 
-SRC_FILES 	= 	phonebook
+SRC_FILES 	= 	main
 
 OBJ_DIR 	= 	obj/
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

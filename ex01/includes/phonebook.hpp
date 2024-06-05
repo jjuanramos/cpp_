@@ -6,51 +6,70 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/04 17:26:31 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/05 11:32:28 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
-#include <iostream>
+
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
 
 class PhoneBook
 {
 private:
-	Contact		contacts[8];
-	int	contacts_count;
+	Contact		_contacts[8];
+
+	void		_display_contacts() const {};
+
 public:
-	PhoneBook(): contacts_count(0) {};
+	PhoneBook();
+	~PhoneBook();
 
-	void	add_contact(void)
-	{
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		size_t		phone_number;
-		std::string	darkest_secret;
-
-		std::cout << "Enter first name: ";
-		std::cin >> first_name;
-		std::cout << "Enter last name: ";
-		std::cin >> last_name;
-		std::cout << "Enter nickname: ";
-		std::cin >> nickname;
-		std::cout << "Enter phone number: ";
-		std::cin >> phone_number;
-		std::cout << "Enter darkest secret: ";
-		std::cin >> darkest_secret;
-	
-		if (first_name.empty() || last_name.empty() || nickname.empty()
-			|| darkest_secret.empty() || phone_number == 0)
-		{
-			std::cout << "Failed to add contact" << std::endl;
-			return ;
-		}
-		if (contacts_count == 8)
-			contacts_count = 0;
-		contacts[contacts_count] = Contact(first_name, last_name, nickname, phone_number,
-			darkest_secret);
-		contacts_count++;
-		return ;
-	}
+	void	welcome() const;
+	void	add_contact();
+	void	search_contact() const;
 };
+
+PhoneBook::PhoneBook()
+{};
+
+PhoneBook::~PhoneBook()
+{};
+
+// void	PhoneBook::_display_contacts() const
+// {
+// 	int	i = 0;
+// 	while (this->_contacts[i])
+// 	{
+
+// 	}
+// }
+
+void	PhoneBook::welcome() const
+{
+	std::cout << "Welcome to Phone Book CPP00 📞" << std::endl;
+	std::cout << "You've got 3 options available:" << std::endl;
+	std::cout << "ADD:\tAdd a new contact" << std::endl;
+	std::cout << "SEARCH:\tSearch an existing contact" << std::endl;
+	std::cout << "EXIT:\tExit Phone Book CPP00" << std::endl;	
+}
+
+void	PhoneBook::add_contact()
+{
+	Contact		c;
+	static int	i = 0;
+
+	if (i == 8)
+		i = 0;
+	c.init();
+	this->_contacts[i] = c;
+	i++;
+}
+
+void	PhoneBook::search_contact() const
+{
+	PhoneBook::_display_contacts();
+}
+
+#endif
