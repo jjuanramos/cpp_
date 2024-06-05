@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/05 12:42:07 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/05 13:28:11 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,19 @@ class PhoneBook
 {
 private:
 	Contact		_contacts[8];
+	int			_n_indexes;
 
 	void		_display_info(std::string elem) const;
 	void		_display_contacts() const;
 
 public:
-	PhoneBook();
+	PhoneBook(): _n_indexes(0) {};
 	~PhoneBook();
 
 	void	welcome() const;
 	void	add_contact();
 	void	search_contact() const;
 };
-
-PhoneBook::PhoneBook()
-{};
 
 PhoneBook::~PhoneBook()
 {};
@@ -58,14 +56,12 @@ void	PhoneBook::_display_info(std::string elem) const
 
 void	PhoneBook::_display_contacts() const
 {
-	size_t				i = 0;
+	int					i = 0;
 	std::string			elem = "";
 	std::stringstream 	s;
 
-	while (i < 8)
+	while (i < this->_n_indexes)
 	{
-		if (this->_contacts[i].get_first_name().empty())
-			break ;
 		std::cout << "|";
 		s << (i + 1);
 		if (s.str().length() == 1)
@@ -96,6 +92,8 @@ void	PhoneBook::add_contact()
 
 	if (i == 8)
 		i = 0;
+	else
+		this->_n_indexes++;
 	c.init();
 	this->_contacts[i] = c;
 	i++;
@@ -107,12 +105,14 @@ void	PhoneBook::search_contact() const
 	size_t		n = 0;
 	bool		valid = false;
 
+	if (!this->_n_indexes)
+		return ;
 	PhoneBook::_display_contacts();
 	std::cout << "Choose a contact based on index: ";
 	do
 	{
 		std::getline(std::cin, s);
-		if (std::cin.fail() || s.empty() || atoi(s.c_str()) < 0 || atoi(s.c_str()) > 8)
+		if (std::cin.fail() || s.empty() || atoi(s.c_str()) <= 0 || atoi(s.c_str()) > this->_n_indexes)
 		{
 			std::cin.clear();
 			std::cout << "Invalid index. Please, try again." << std::endl;
