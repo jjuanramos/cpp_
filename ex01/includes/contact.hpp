@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:44:34 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/05 12:22:41 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/05 14:04:08 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,16 @@ std::string	Contact::_get_input(std::string prompt)
 	std::string	s = "";
 	bool		valid = false;
 
-	std::cout << prompt << ": ";
 	do
 	{
+		std::cout << prompt << ": ";
 		getline(std::cin, s);
-		if (std::cin.fail() || s.empty())
+		if (std::cin.fail() || s.empty()
+			|| (!prompt.compare("Phone number") &&
+				s.find_first_not_of("0123456789") != std::string::npos))
 		{
 			std::cin.clear();
-			std::cout << s << "Invalid Input. Please, try again." << std::endl;
-			std::cout << "> ";
+			std::cout << "Invalid Input. Please, try again." << std::endl;
 		}
 		else
 			valid = true;

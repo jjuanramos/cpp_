@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/05 13:28:11 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/05 14:03:30 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ private:
 
 	void		_display_info(std::string elem) const;
 	void		_display_contacts() const;
+	void		_display_contact(int n) const;
+	Contact		_get_contact(int n) const;
 
 public:
 	PhoneBook(): _n_indexes(0) {};
@@ -35,6 +37,11 @@ public:
 
 PhoneBook::~PhoneBook()
 {};
+
+Contact	PhoneBook::_get_contact(int n) const
+{
+	return (this->_contacts[n]);
+}
 
 void	PhoneBook::_display_info(std::string elem) const
 {
@@ -59,6 +66,7 @@ void	PhoneBook::_display_contacts() const
 	int					i = 0;
 	std::string			elem = "";
 	std::stringstream 	s;
+	Contact				c;
 
 	while (i < this->_n_indexes)
 	{
@@ -68,12 +76,25 @@ void	PhoneBook::_display_contacts() const
 			this->_display_info(s.str());
 		else
 			this->_display_info(s.str().substr(1, 1));
-		this->_display_info(this->_contacts[i].get_first_name());
-		this->_display_info(this->_contacts[i].get_last_name());
-		this->_display_info(this->_contacts[i].get_nickname());
+		c = this->_get_contact(i);
+		this->_display_info(c.get_first_name());
+		this->_display_info(c.get_last_name());
+		this->_display_info(c.get_nickname());
 		std::cout << std::endl;
 		i++;
 	}
+}
+
+void	PhoneBook::_display_contact(int n) const
+{
+	Contact	c;
+
+	c = this->_get_contact(n);
+	std::cout << c.get_first_name() << "\n";
+	std::cout << c.get_last_name() << "\n";
+	std::cout << c.get_nickname() << "\n";
+	std::cout << c.get_phone_number() << "\n";
+	std::cout << c.get_darkest_secret() << std::endl;
 }
 
 void	PhoneBook::welcome() const
@@ -102,29 +123,28 @@ void	PhoneBook::add_contact()
 void	PhoneBook::search_contact() const
 {
 	std::string s = "";
-	size_t		n = 0;
+	int			n = 0;
 	bool		valid = false;
 
 	if (!this->_n_indexes)
 		return ;
 	PhoneBook::_display_contacts();
-	std::cout << "Choose a contact based on index: ";
 	do
 	{
+		std::cout << "Choose a contact based on index: ";
 		std::getline(std::cin, s);
 		if (std::cin.fail() || s.empty() || atoi(s.c_str()) <= 0 || atoi(s.c_str()) > this->_n_indexes)
 		{
 			std::cin.clear();
 			std::cout << "Invalid index. Please, try again." << std::endl;
-			std::cout << "> ";
 		}
 		else
 		{
-			n = atoi(s.c_str());
+			n = atoi(s.c_str()) - 1;
 			valid = true;
 		}
 	} while (!valid);
-	(void)n;
+	this->_display_contact(n);
 }
 
 #endif
