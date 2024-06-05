@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:55:56 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/04 13:29:59 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/05 12:08:54 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main (int argc, char **argv)
 {
-	int			i;
+	size_t		i;
 	std::string s;
 
 	i = 0;

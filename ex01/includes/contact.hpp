@@ -6,13 +6,14 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:44:34 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/05 11:45:38 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/05 12:22:41 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <sstream>
 
 #ifndef CONTACT_H
 #define CONTACT_H
@@ -32,7 +33,12 @@ public:
 	Contact();
 	~Contact();
 	
-	void	init();
+	void		init();
+	std::string	get_first_name() const;
+	std::string	get_last_name() const;
+	std::string	get_nickname() const;
+	std::string	get_phone_number() const;
+	std::string	get_darkest_secret() const;
 };
 
 Contact::Contact()
@@ -61,6 +67,31 @@ std::string	Contact::_get_input(std::string prompt)
 	} while (!valid);
 	return (s);
 }
+
+std::string	Contact::get_first_name() const
+{
+	return (this->_first_name);
+};
+
+std::string	Contact::get_last_name() const
+{
+	return (this->_last_name);
+};
+
+std::string	Contact::get_nickname() const
+{
+	return (this->_nickname);
+};
+
+std::string	Contact::get_phone_number() const
+{
+	return (this->_phone_number);
+};
+
+std::string	Contact::get_darkest_secret() const
+{
+	return (this->_darkest_secret);
+};
 
 void	Contact::init(void)
 {
