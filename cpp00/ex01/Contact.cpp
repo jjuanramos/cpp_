@@ -1,45 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 13:44:34 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 16:23:12 by juramos          ###   ########.fr       */
+/*   Created: 2024/06/10 16:31:04 by juramos           #+#    #+#             */
+/*   Updated: 2024/06/10 16:31:30 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <sstream>
-
-#ifndef CONTACT_H
-#define CONTACT_H
-
-class Contact
-{
-private:
-	std::string	_first_name;
-	std::string	_last_name;
-	std::string	_nickname;
-	std::string	_phone_number;
-	std::string	_darkest_secret;
-
-	std::string	_get_input(std::string prompt);
-
-public:
-	Contact();
-	~Contact();
-	
-	void		init();
-	std::string	get_first_name() const;
-	std::string	get_last_name() const;
-	std::string	get_nickname() const;
-	std::string	get_phone_number() const;
-	std::string	get_darkest_secret() const;
-};
+#include "Contact.hpp"
 
 Contact::Contact()
 {};
@@ -102,6 +73,3 @@ void	Contact::init(void)
 	this->_phone_number = this->_get_input("Phone number");
 	this->_darkest_secret = this->_get_input("Darkest Secret pls");
 }
-
-
-#endif

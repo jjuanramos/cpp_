@@ -1,39 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 16:22:41 by juramos          ###   ########.fr       */
+/*   Created: 2024/06/10 16:30:23 by juramos           #+#    #+#             */
+/*   Updated: 2024/06/10 16:30:53 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-
-class PhoneBook
-{
-private:
-	Contact		_contacts[8];
-	int			_n_indexes;
-
-	void		_display_info(std::string elem) const;
-	void		_display_contacts() const;
-	void		_display_contact(int n) const;
-	Contact		_get_contact(int n) const;
-
-public:
-	PhoneBook(): _n_indexes(0) {};
-	~PhoneBook();
-
-	void	welcome() const;
-	void	add_contact();
-	void	search_contact() const;
-};
+#include "PhoneBook.hpp"
 
 PhoneBook::~PhoneBook()
 {};
@@ -146,5 +123,3 @@ void	PhoneBook::search_contact() const
 	} while (!valid);
 	this->_display_contact(n);
 }
-
-#endif

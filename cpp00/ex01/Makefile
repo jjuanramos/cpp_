@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 12:57:03 by juramos           #+#    #+#              #
-#    Updated: 2024/06/05 11:31:59 by juramos          ###   ########.fr        #
+#    Updated: 2024/06/10 16:32:18 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,10 @@ NAME 		= 	phonebook
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98
 
-SRC_FILES 	= 	main
+SRC_FILES 	= 	main PhoneBook Contact
 
 OBJ_DIR 	= 	obj/
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
-
-INC			=	-I includes/
 
 DEF_COLOR 	= 	\033[0;39m
 GRAY 		= 	\033[0;90m
@@ -41,7 +39,7 @@ all: $(NAME)
 
 $(OBJ_DIR)%.o: %.cpp | $(OBJF)
 	@echo "$(WHITE)Compiling ${notdir $<}"
-	@$(CXX) $(CXX_FLAGS) $(INC) -c $< -o $@
+	@$(CXX) $(CXX_FLAGS) -c $< -o $@
 
 $(OBJF):
 	@mkdir -p $(OBJ_DIR)
