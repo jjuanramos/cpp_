@@ -6,11 +6,11 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/05 14:03:30 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/10 16:22:41 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
