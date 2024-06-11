@@ -26,7 +26,7 @@ int	main (void)
 	while (1)
 	{
 		std::cout << "> ";
-		getline(std::cin, input);
+		std::getline(std::cin, input);
 		if (!input.compare("ADD"))
 			pb.add_contact();
 		else if (!input.compare("SEARCH"))

@@ -43,7 +43,6 @@ void	PhoneBook::_display_info(std::string elem) const
 void	PhoneBook::_display_contacts() const
 {
 	int					i = 0;
-	std::string			elem = "";
 	std::stringstream 	s;
 	Contact				c;
 
@@ -82,7 +81,7 @@ void	PhoneBook::welcome() const
 	std::cout << "You've got 3 options available:" << std::endl;
 	std::cout << "ADD:\tAdd a new contact" << std::endl;
 	std::cout << "SEARCH:\tSearch an existing contact" << std::endl;
-	std::cout << "EXIT:\tExit Phone Book CPP00" << std::endl;	
+	std::cout << "EXIT:\tExit Phone Book CPP00" << std::endl;
 }
 
 void	PhoneBook::add_contact()
