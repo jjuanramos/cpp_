@@ -6,11 +6,13 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:30:23 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 16:30:53 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/11 11:07:59 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook(): _n_indexes(0) {}
 
 PhoneBook::~PhoneBook()
 {};

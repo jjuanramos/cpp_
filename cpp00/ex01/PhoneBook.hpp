@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 16:30:50 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/11 11:08:12 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ private:
 	Contact		_get_contact(int n) const;
 
 public:
-	PhoneBook(): _n_indexes(0) {};
-	~PhoneBook();
+				PhoneBook();
+				~PhoneBook();
 
-	void	welcome() const;
-	void	add_contact();
-	void	search_contact() const;
+	void		welcome() const;
+	void		add_contact();
+	void		search_contact() const;
 };
 
 #endif

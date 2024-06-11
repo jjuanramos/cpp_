@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:00:06 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 17:47:30 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/11 11:06:10 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Zombie
 private:
 	std::string		_name;
 public:
-					Zombie(): _name("default") {};
+					Zombie();
 					~Zombie();
 	void			announce();
 	void			set_name(std::string name);
