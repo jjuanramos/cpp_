@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:31:04 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 16:31:30 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/12 11:26:18 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Contact::Contact()
 Contact::~Contact()
 {};
 
-std::string	Contact::_get_input(std::string prompt)
+std::string	Contact::_get_input(std::string prompt) const
 {
 	std::string	s = "";
 	bool		valid = false;

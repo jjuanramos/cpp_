@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:44:34 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 11:07:29 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/12 11:26:26 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 	std::string	_phone_number;
 	std::string	_darkest_secret;
 
-	std::string	_get_input(std::string prompt);
+	std::string	_get_input(std::string prompt) const;
 
 public:
 				Contact();
