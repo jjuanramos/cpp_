@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:49:35 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 11:28:53 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/12 11:30:46 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 				HumanB(std::string _name);
 				~HumanB();
-	void		attack();
+	void		attack() const;
 	void		setWeapon(Weapon& w);
 };
 

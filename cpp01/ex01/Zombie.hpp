@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:00:06 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 11:06:10 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/12 11:29:09 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
 					Zombie();
 					~Zombie();
-	void			announce();
+	void			announce() const;
 	void			set_name(std::string name);
 };
 

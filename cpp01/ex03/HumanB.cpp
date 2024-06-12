@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:49:32 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 11:28:58 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/12 11:30:50 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void		HumanB::setWeapon(Weapon& w)
 	this->_w = &w;
 }
 
-void		HumanB::attack()
+void		HumanB::attack() const
 {
 	std::cout << this->_name <<  " attacks with their " << this->_w->getType()  << std::endl;
 }
