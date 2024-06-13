@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:11:06 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/13 12:36:48 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/13 16:53:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,96 @@ Fixed&	Fixed::operator=(Fixed const& other)
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = other.getRawBits();
 	return (*this);
+}
+
+Fixed	Fixed::operator+(Fixed const& other)
+{
+	std::cout << "Addition assignment operator called" << std::endl;
+	return (Fixed((this->toFloat() + other.toFloat())));
+}
+
+Fixed	Fixed::operator-(Fixed const& other)
+{
+	std::cout << "Subtraction assignment operator called" << std::endl;
+	return (Fixed((this->toFloat() - other.toFloat())));
+}
+
+Fixed	Fixed::operator*(Fixed const& other)
+{
+	std::cout << "Multiplication assignment operator called" << std::endl;
+	return (Fixed(this->toFloat() * other.toFloat()));
+}
+
+Fixed	Fixed::operator/(Fixed const& other)
+{
+	std::cout << "Division assignment operator called" << std::endl;
+	return (Fixed((this->toFloat() * other.toFloat())));
+}
+
+Fixed&	Fixed::operator++()
+{
+	std::cout << "pre-increment assignment operator called" << std::endl;
+	this->_value = this->_value + 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp(*this);
+	std::cout << "post-increment assignment operator called" << std::endl;
+	this->_value = this->_value + 1;
+	return (temp);
+}
+
+Fixed&	Fixed::operator--()
+{
+	std::cout << "pre-decrement assignment operator called" << std::endl;
+	this->_value = this->_value - 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp(*this);
+	std::cout << "post-decrement assignment operator called" << std::endl;
+	this->_value = this->_value - 1;
+	return (temp);
+}
+
+bool	Fixed::operator>(Fixed const& other)
+{
+	std::cout << "> assignment operator called" << std::endl;
+	return (this->getRawBits() > other.getRawBits());
+}
+
+bool	Fixed::operator<(Fixed const& other)
+{
+	std::cout << "< assignment operator called" << std::endl;
+	return (this->getRawBits() < other.getRawBits());
+}
+
+bool	Fixed::operator>=(Fixed const& other)
+{
+	std::cout << ">= assignment operator called" << std::endl;
+	return (this->getRawBits() >= other.getRawBits());
+}
+
+bool	Fixed::operator<=(Fixed const& other)
+{
+	std::cout << "<= assignment operator called" << std::endl;
+	return (this->getRawBits() <= other.getRawBits());
+}
+
+bool	Fixed::operator==(Fixed const& other)
+{
+	std::cout << "== assignment operator called" << std::endl;
+	return (this->getRawBits() == other.getRawBits());
+}
+
+bool	Fixed::operator!=(Fixed const& other)
+{
+	std::cout << "!= assignment operator called" << std::endl;
+	return (this->getRawBits() != other.getRawBits());
 }
 
 float	Fixed::toFloat( void ) const
