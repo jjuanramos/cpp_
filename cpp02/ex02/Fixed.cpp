@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:11:06 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/13 16:53:49 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/13 17:03:39 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,27 @@ int	Fixed::getRawBits() const
 void	Fixed::setRawBits(int const raw)
 {
 	this->_value = raw;
+}
+
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b)
+{
+	return (a.getRawBits() < b.getRawBits() ? a : b);
+}
+
+const Fixed&	Fixed::min(Fixed const& a, Fixed const& b)
+{
+	return (a.getRawBits() < b.getRawBits() ? a : b);
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b)
+{
+	return (a.getRawBits() > b.getRawBits() ? a : b);
+}
+
+const Fixed&	Fixed::max(Fixed const& a, Fixed const& b)
+{
+	return (a.getRawBits() > b.getRawBits() ? a : b);
 }
 
 std::ostream&	operator<<(std::ostream& o, Fixed const& other)
