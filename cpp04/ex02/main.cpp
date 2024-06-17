@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:48:21 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 17:31:12 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 17:37:08 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 void	test_deep_copy(AAnimal *value)
 {
 	AAnimal	*copy = value->clone();
-	std::cout << "original: " << value->getType() << std::endl;
-	std::cout << "copy: " << copy->getType() << std::endl;
+	value->makeSound();
+	copy->makeSound();
 
 	delete copy;
 }
