@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:23 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:07:25 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 16:38:04 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ protected:
 	std::string type;
 public:
 						Animal(std::string type="Dragon");
+						Animal(Animal const& copy);
+	Animal&				operator=(Animal const& other);
 	virtual				~Animal();
 	virtual void		makeSound() const;
 	std::string			getType() const;
