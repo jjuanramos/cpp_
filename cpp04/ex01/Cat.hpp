@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:44:27 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 15:57:20 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 16:46:37 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ class Cat: public Animal
 		Brain			*_brain;
 	public:
 						Cat();
+						Cat(Cat const& copy);
+		Cat				operator=(Cat const& other);
 						~Cat();
+		Brain			*getBrain() const;
 		virtual void	makeSound() const;
 };
 

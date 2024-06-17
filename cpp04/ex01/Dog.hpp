@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:47:11 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 15:58:01 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 16:48:02 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ class Dog: public Animal
 		Brain			*_brain;
 	public:
 						Dog();
+						Dog(Dog const& copy);
+		Dog				operator=(Dog const& other);
 						~Dog();
+		Brain			*getBrain() const;
 		virtual void	makeSound() const;
 };
 
