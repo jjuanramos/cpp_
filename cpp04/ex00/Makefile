@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/06/17 12:54:37 by juramos          ###   ########.fr        #
+#    Updated: 2024/06/17 13:09:14 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME 		= 	animal
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98
 
-SRC_FILES 	= 	main Animal Cat Dog
+SRC_FILES 	= 	main Animal Cat Dog WrongAnimal WrongCat
 
 OBJ_DIR 	= 	obj/
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
