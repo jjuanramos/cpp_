@@ -6,13 +6,13 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:16:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 10:46:34 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 11:06:36 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name): _name(name), _hit_pts(10), _energy_pts(10), _atk_dmg(0)
+ClapTrap::ClapTrap(std::string name, int _hit_pts=10, int _energy_pts=10, int _atk_dmg=0): _name(name), _hit_pts(_hit_pts), _energy_pts(_energy_pts), _atk_dmg(_atk_dmg)
 {
 	std::cout << "Constructor for ClapTrap called!" << std::endl;
 }
