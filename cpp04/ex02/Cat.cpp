@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:44:20 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:58:49 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 17:29:39 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ Brain	*Cat::getBrain() const
 void	Cat::makeSound() const
 {
 	std::cout << "I'm a cat. Meowwwww" << std::endl;
+}
+
+Cat	*Cat::clone() const
+{
+	return (new Cat(*this));
 }

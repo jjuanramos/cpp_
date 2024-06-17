@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:47:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:58:53 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 17:30:14 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ Brain	*Dog::getBrain() const
 void	Dog::makeSound() const
 {
 	std::cout << "I'm a dog. Guau Guau" << std::endl;
+}
+
+Dog	*Dog::clone() const
+{
+	return (new Dog(*this));
 }

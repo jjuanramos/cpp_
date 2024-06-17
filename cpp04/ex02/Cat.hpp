@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:44:27 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:55:54 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 17:34:04 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Cat: public AAnimal
 						~Cat();
 		Brain			*getBrain() const;
 		virtual void	makeSound() const;
+		virtual Cat		*clone() const;
 };
 
 #endif

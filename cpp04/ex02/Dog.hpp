@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:47:11 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:55:51 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 17:34:08 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Dog: public AAnimal
 						~Dog();
 		Brain			*getBrain() const;
 		virtual void	makeSound() const;
+		virtual Dog		*clone() const;
 };
 
 #endif
