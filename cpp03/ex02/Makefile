@@ -6,11 +6,11 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/06/17 11:33:22 by juramos          ###   ########.fr        #
+#    Updated: 2024/06/17 11:37:39 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= 	scavtrap
+NAME 		= 	frogtrap
 
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98
