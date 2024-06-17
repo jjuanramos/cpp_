@@ -6,16 +6,16 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/06/17 15:54:04 by juramos          ###   ########.fr        #
+#    Updated: 2024/06/17 16:06:12 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	brain
 
 CXX 		= 	c++
-CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98
+CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
-SRC_FILES 	= 	main Animal Cat Dog WrongAnimal WrongCat
+SRC_FILES 	= 	main Animal Cat Dog Brain
 
 OBJ_DIR 	= 	obj/
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

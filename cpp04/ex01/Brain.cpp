@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 12:42:33 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 13:04:42 by juramos          ###   ########.fr       */
+/*   Created: 2024/06/17 15:56:03 by juramos           #+#    #+#             */
+/*   Updated: 2024/06/17 16:32:55 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Brain.hpp"
 
-WrongAnimal::WrongAnimal(std::string type): type(type)
-{}
-
-WrongAnimal::~WrongAnimal()
-{}
-
-void	WrongAnimal::makeSound() const
+Brain::Brain(/* args */)
 {
-	std::cout << "I'm weird as fuck bro. MUUUUUU" << std::endl;
+	std::cout << "Creating Brain" << std::endl;
 }
 
-std::string	WrongAnimal::getType() const
+Brain::~Brain()
 {
-	return (this->type);
+	std::cout << "Destroying Brain" << std::endl;
 }

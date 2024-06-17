@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 13:04:54 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 13:06:01 by juramos          ###   ########.fr       */
+/*   Created: 2024/06/17 15:54:30 by juramos           #+#    #+#             */
+/*   Updated: 2024/06/17 15:56:00 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef BRAIN_H
+#define BRAIN_H
 
-WrongCat::WrongCat(): WrongAnimal("WrongCat")
-{}
+#include <iostream>
 
-WrongCat::~WrongCat()
-{}
-
-void	WrongCat::makeSound() const
+class Brain
 {
-	std::cout << "BUDJEJADJFLJ" << std::endl;
-}
+private:
+	std::string	ideas[100];
+public:
+	Brain();
+	~Brain();
+};
+
+#endif
