@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:14:05 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 10:16:48 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 10:38:43 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ private:
 	int			_atk_dmg;
 public:
 				ClapTrap(std::string name);
+				ClapTrap(ClapTrap const& copy);
 				~ClapTrap();
+	ClapTrap&	operator=(ClapTrap const& other);
 	void		attack(const std::string& target);
+	std::string	getName() const;
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
 };

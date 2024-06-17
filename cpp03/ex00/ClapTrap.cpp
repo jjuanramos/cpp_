@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:16:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 10:28:21 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 10:39:47 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,27 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hit_pts(10), _energy_pts(10)
 	std::cout << "Constructor for ClapTrap called!" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const& copy)
+{
+	std::cout << "Copy Constructor for ClapTrap called!" << std::endl;
+	this->_name = copy.getName();
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Destructor for ClapTrap called!" << std::endl;
+}
+
+ClapTrap&	ClapTrap::operator=(ClapTrap const& other)
+{
+	std::cout << "Copy assignment operator for ClapTrap called" << std::endl;
+	this->_name = other.getName();
+	return (*this);
+}
+
+std::string	ClapTrap::getName() const
+{
+	return (this->_name);
 }
 
 void	ClapTrap::attack(const std::string& target)
