@@ -6,14 +6,11 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:42:33 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 12:54:27 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 13:01:32 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-
-Animal::Animal(): type("Dragon")
-{}
 
 Animal::Animal(std::string type): type(type)
 {}
@@ -21,7 +18,12 @@ Animal::Animal(std::string type): type(type)
 Animal::~Animal()
 {}
 
-void	Animal::makeSound()
+void	Animal::makeSound() const
 {
-	std::cout << "I'm a regular " << this->type << ", Beeeee" << std::endl;
+	std::cout << "I'm a regular " << this->getType() << ", Beeeee" << std::endl;
+}
+
+std::string	Animal::getType() const
+{
+	return (this->type);
 }
