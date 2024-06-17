@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:14:05 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 11:05:21 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/17 11:58:12 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-protected:
+private:
 	std::string	_name;
 	int			_hit_pts;
 	int			_energy_pts;
