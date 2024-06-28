@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 14:33:25 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:43:33 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw() {
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Grade too low, can't get lower than hundred fifity");
+	return ("Grade too low, can't get lower than hundred fifty");
 }
 
 std::string	Bureaucrat::getName() const {
@@ -66,12 +66,12 @@ void	Bureaucrat::executeForm(AForm const& form) const
 {
 	try
 	{
-		form.checkAndExecute(*this);
-		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		if (form.checkAndExecute(*this))
+			std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch (AForm::GradeTooLowException& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.what() << " for bureaucrat " << this->getName() << std::endl;
 	}
 }
 

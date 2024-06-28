@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 11:48:01 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:41:56 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw() {
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Grade too low, can't get lower than hundred fifity");
+	return ("Grade too low, can't get lower than hundred fifty");
 }
 
 std::string	Bureaucrat::getName() const {
