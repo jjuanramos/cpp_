@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:30:21 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 11:46:28 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 13:25:19 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <stdexcept>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -29,7 +29,7 @@ public:
 	~Bureaucrat();
 	std::string	getName() const;
 	int			getRange() const;
-	void		signForm(Form& f, std::string reason);
+	void		signForm(AForm& f, std::string reason);
 	Bureaucrat&	operator++();
 	Bureaucrat&	operator--();
 

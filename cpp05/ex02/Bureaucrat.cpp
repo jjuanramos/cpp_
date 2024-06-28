@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 11:48:01 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 13:31:27 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-void	Bureaucrat::signForm(Form& f, std::string reason)
+void	Bureaucrat::signForm(AForm& f, std::string reason)
 {
 	if (f.getIsSigned())
 		std::cout << this->getName() << " signed " << f.getName() << std::endl;

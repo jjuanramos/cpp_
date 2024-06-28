@@ -6,12 +6,12 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:12:49 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 12:23:38 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 13:23:54 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_H
-#define FORM_H
+#ifndef AFORM_H
+#define AFORM_H
 
 #include <iostream>
 #include <stdexcept>
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 	std::string const	_name;
@@ -27,9 +27,10 @@ private:
 	int const			_signing_grade;
 	int const			_executing_grade;
 public:
-	Form(std::string const _name, int const _signing_grade, int const _executing_grade);
-	~Form();
-	virtual 	std::string	getName() const = 0;
+	AForm(std::string const _name, int const _signing_grade, int const _executing_grade);
+	~AForm();
+	std::string	getName() const;
+	virtual 	std::string	getTarget() const = 0;
 	bool		getIsSigned() const;
 	int			getSigningGrade() const;
 	int			getExecutingGrade() const;
@@ -46,6 +47,6 @@ public:
 	};
 };
 
-std::ostream&	operator<<(std::ostream& o, Form& f);
+std::ostream&	operator<<(std::ostream& o, AForm& f);
 
 #endif
