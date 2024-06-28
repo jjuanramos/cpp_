@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 14:32:39 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:33:25 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	Bureaucrat::executeForm(AForm const& form) const
 	try
 	{
 		form.checkAndExecute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch (AForm::GradeTooLowException& e)
 	{
