@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:30:21 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 13:25:19 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:32:43 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	void		signForm(AForm& f, std::string reason);
 	Bureaucrat&	operator++();
 	Bureaucrat&	operator--();
+	void		executeForm(AForm const& form) const;
 
 	class GradeTooHighException : public std::exception
 	{

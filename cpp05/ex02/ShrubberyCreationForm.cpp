@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:11:48 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 13:58:55 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:29:58 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string	ShrubberyCreationForm::getTarget() const
 	return (this->_target);
 }
 
-void ShrubberyCreationForm::shrubbery() const
+void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 {
 	std::string		filename = this->getTarget() + "_shrubbery";
 	std::ofstream	outfile(filename);
@@ -40,4 +40,5 @@ void ShrubberyCreationForm::shrubbery() const
 	outfile << "  _ -  | |   -_" << std::endl;
 	outfile << "      // \\\\" << std::endl;
 	outfile.close();
+	(void)executor;
 }

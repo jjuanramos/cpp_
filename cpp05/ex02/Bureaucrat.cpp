@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 13:31:27 by juramos          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:32:39 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,18 @@ Bureaucrat&	Bureaucrat::operator--() {
 	if (this->_range > 150)
 		throw Bureaucrat::GradeTooLowException();
 	return (*this);
+}
+
+void	Bureaucrat::executeForm(AForm const& form) const
+{
+	try
+	{
+		form.checkAndExecute(*this);
+	}
+	catch (AForm::GradeTooLowException& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat const& b) {
