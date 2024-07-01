@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:40:24 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:11:47 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/01 10:18:40 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Intern
 public:
 	Intern();
 	~Intern();
-	AForm*	makeAForm(std::string name, std::string target) const;
+	AForm*	makeForm(std::string name, std::string target) const;
 };
 
 

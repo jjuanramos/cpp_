@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 14:02:03 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 14:29:02 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/01 10:15:41 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ std::string	PresidentialPardonForm::getTarget() const
 
 void	PresidentialPardonForm::execute(Bureaucrat const& executor) const
 {
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+	if (this->getIsSigned())
+		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	(void)executor;
 }

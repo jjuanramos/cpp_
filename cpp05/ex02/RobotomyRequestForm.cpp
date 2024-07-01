@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 14:09:49 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 14:29:37 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/01 10:16:05 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,12 @@ std::string	RobotomyRequestForm::getTarget() const
 void RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
 	int	is_robotomized = std::rand() % 2;
-	if (is_robotomized)
-		std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;
-	else
-		std::cout << "Robotomy has failed." << std::endl;
+	if (this->getIsSigned())
+	{
+		if (is_robotomized)
+			std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;
+		else
+			std::cout << "Robotomy has failed." << std::endl;
+	}
 	(void)executor;
 }

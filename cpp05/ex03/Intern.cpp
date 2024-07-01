@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:40:16 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:11:51 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/01 10:18:40 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Intern::~Intern()
 {
 }
 
-AForm*	Intern::makeAForm(std::string name, std::string target) const
+AForm*	Intern::makeForm(std::string name, std::string target) const
 {
 	std::map<std::string, int>	AForm_map;
 	AForm_map["robotomy request"] = 1;

@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:30:04 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:12:00 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/01 10:18:51 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 int	main()
 {
 	Intern		juan;
-	AForm*		myAForm;
-	AForm*		yourAForm;
+	AForm*		myForm;
+	AForm*		yourForm;
 	Bureaucrat	Mike("Mike", 1);
 	
-	myAForm = juan.makeAForm("robotomy request", "Shrek");
-	if (myAForm)
-		myAForm->execute(Mike);
+	myForm = juan.makeForm("robotomy request", "Shrek");
+	if (myForm)
+		myForm->checkAndExecute(Mike);
 	else
 		return (1);
-	yourAForm = juan.makeAForm("non existing", "juan");
-	if (yourAForm)
-		yourAForm->execute(Mike);
+	myForm->beSigned(Mike);
+	myForm->checkAndExecute(Mike);
+	yourForm = juan.makeForm("non existing", "juan");
+	if (yourForm)
+		yourForm->checkAndExecute(Mike);
 	else
 		return (1);
 	return (0);
