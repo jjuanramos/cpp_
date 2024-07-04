@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:25:37 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 11:11:16 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	main()
 	c.takeDamage(10);
 	c.guardGate();
 	c.attack("Paper");
-	return (EXIT_SUCCESS);
+	return (0);
 }

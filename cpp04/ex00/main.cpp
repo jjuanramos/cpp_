@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:48:21 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 13:08:17 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int main()
 	meta->makeSound();
 	wrong_meta->makeSound();
 	ou->makeSound();
-return (EXIT_SUCCESS);
+return (0);
 }

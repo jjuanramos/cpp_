@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 17:56:23 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	output_file << get_replaced_string(file_contents, argv) << std::flush;
-	return (EXIT_SUCCESS);
+	return (0);
 }

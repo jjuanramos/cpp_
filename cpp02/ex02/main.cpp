@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:34:40 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/13 17:03:51 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int main( void ) {
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 
-	return (EXIT_SUCCESS);
+	return (0);
 }
 

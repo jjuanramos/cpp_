@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:01:33 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 17:50:29 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	main(void)
 		horde[i].announce();
 
 	delete [] horde;
-	return (EXIT_SUCCESS);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:08:41 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/10 16:32:55 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main (void)
 		else if (!input.compare("EXIT"))
 		{
 			std::cout << "Goodbye soldier 🫡" << std::endl;
-			return (EXIT_SUCCESS);
+			return (0);
 		}
 		else
 			std::cout << "Invalid input. Please, try again." << std::endl;

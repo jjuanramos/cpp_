@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:49:27 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 11:21:51 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }

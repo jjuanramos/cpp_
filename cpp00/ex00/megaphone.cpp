@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:55:56 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/04 11:32:48 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	main (int argc, char **argv)
 			std::cout << s;
 		}
 	std::cout << std::endl;
-	return (EXIT_SUCCESS);
+	return (0);
 }
