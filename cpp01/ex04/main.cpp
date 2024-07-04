@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:46:29 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cerr << "Wrong number of parameters" << std::endl;
-		return (EXIT_FAILURE);
+		return (1);
 	}
 	file_contents = get_file_contents(argv);
 	if (file_contents.empty())
 	{
 		std::cerr << "The given file doesn't exist: " << argv[1] << std::endl;
-		return (EXIT_FAILURE);
+		return (1);
 	}
 	file_replacement = argv[1];
 	file_replacement.append(".replace");
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	if (!output_file.is_open())
 	{
 		std::cerr << "Issue opening " << file_replacement << std::endl;
-		return (EXIT_FAILURE);
+		return (1);
 	}
 	output_file << get_replaced_string(file_contents, argv) << std::flush;
 	return (0);
