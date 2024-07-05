@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 13:42:29 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/04 11:38:54 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/05 11:02:56 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define PHONEBOOK_H
 
 #include "Contact.hpp"
-#include <algorithm>
 #include <iostream>
 #include <string>
 #include <iomanip>
