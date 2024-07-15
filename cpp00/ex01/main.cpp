@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:08:41 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/04 11:46:01 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/15 13:03:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include <iomanip>
 #include <sstream>
+#include <stdio.h>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -35,6 +36,12 @@ int	main (void)
 		{
 			std::cout << "Goodbye soldier 🫡" << std::endl;
 			return (0);
+		}
+		else if (std::cin.eof())
+		{
+			std::cout << std::flush  << std::endl;
+			std::cin.clear();
+			clearerr(stdin);
 		}
 		else
 			std::cout << "Invalid input. Please, try again." << std::endl;

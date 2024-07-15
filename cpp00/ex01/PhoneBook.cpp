@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:30:23 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/11 11:07:59 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/15 13:51:52 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,19 @@ void	PhoneBook::_display_contacts() const
 	std::stringstream 	s;
 	Contact				c;
 
-	while (i < this->_n_indexes)
+	while (i < std::min(8, this->_n_indexes))
 	{
 		std::cout << "|";
 		s << (i + 1);
-		if (s.str().length() == 1)
-			this->_display_info(s.str());
-		else
-			this->_display_info(s.str().substr(1, 1));
+		this->_display_info(s.str());
 		c = this->_get_contact(i);
 		this->_display_info(c.get_first_name());
 		this->_display_info(c.get_last_name());
 		this->_display_info(c.get_nickname());
 		std::cout << std::endl;
 		i++;
+		s.str("");
+		s.clear();
 	}
 }
 
@@ -111,7 +110,7 @@ void	PhoneBook::search_contact() const
 	{
 		std::cout << "Choose a contact based on index: ";
 		std::getline(std::cin, s);
-		if (std::cin.fail() || s.empty() || atoi(s.c_str()) <= 0 || atoi(s.c_str()) > this->_n_indexes)
+		if (std::cin.fail() || s.empty() || atoi(s.c_str()) <= 0 || atoi(s.c_str()) > std::min(this->_n_indexes, 8))
 		{
 			std::cin.clear();
 			std::cout << "Invalid index. Please, try again." << std::endl;
