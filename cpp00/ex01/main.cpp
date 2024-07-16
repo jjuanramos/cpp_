@@ -6,15 +6,10 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:08:41 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/15 13:03:49 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/16 12:30:36 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <sstream>
-#include <stdio.h>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 

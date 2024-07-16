@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:30:23 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/15 13:51:52 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/16 12:32:55 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,13 @@ void	PhoneBook::search_contact() const
 	{
 		std::cout << "Choose a contact based on index: ";
 		std::getline(std::cin, s);
-		if (std::cin.fail() || s.empty() || atoi(s.c_str()) <= 0 || atoi(s.c_str()) > std::min(this->_n_indexes, 8))
+		if (std::cin.eof())
+		{
+			std::cout << std::flush  << std::endl;
+			std::cin.clear();
+			clearerr(stdin);
+		}
+		else if (std::cin.fail() || s.empty() || atoi(s.c_str()) <= 0 || atoi(s.c_str()) > std::min(this->_n_indexes, 8))
 		{
 			std::cin.clear();
 			std::cout << "Invalid index. Please, try again." << std::endl;
