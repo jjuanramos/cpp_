@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:28:14 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/12 10:54:53 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/17 11:50:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,31 @@ void	Harl::error()
 
 void	Harl::complain(std::string level)
 {
-	std::map<std::string, void (Harl::*)()> func_map;
-	func_map["DEBUG"] = &Harl::debug;
-	func_map["INFO"] = &Harl::info;
-	func_map["WARNING"] = &Harl::warning;
-	func_map["ERROR"] = &Harl::error;
-	Harl	h;
-	std::map<std::string, void (Harl::*)()>::iterator it = func_map.find(level);
-	
-	if (it != func_map.end())
-		(h.*(it->second))();
-	else
+	std::string	const	func_map[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	Harl				h;
+	int					val = -1;
+
+	while (++val < 4)
+	{
+		if (!func_map[val].compare(level))
+			break ;
+	}
+	switch (val)
+	{
+	case 0:
+		h.debug();
+		break;
+	case 1:
+		h.info();
+		break;
+	case 2:
+		h.warning();
+		break;
+	case 3:
+		h.error();
+		break;
+	default:
 		std::cout << "Function not found. MEC" << std::endl;
+		break;
+	}
 }
