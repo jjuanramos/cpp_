@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:14:05 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/18 12:40:55 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 12:45:40 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 	int				getEnergyPts() const;
 	int				getAtkDmg() const;
 	void			setEnergyPts(int val);
+	void			setName(std::string const& name);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
 };

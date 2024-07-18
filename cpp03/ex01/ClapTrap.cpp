@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:16:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/18 12:34:49 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 12:45:28 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,13 @@ int		ClapTrap::getAtkDmg() const
 {
 	return (this->_atk_dmg);
 }
+
 void	ClapTrap::setEnergyPts(int val)
 {
 	this->_energy_pts = val;
+}
+
+void	ClapTrap::setName(std::string const& name)
+{
+	this->_name = name;
 }
