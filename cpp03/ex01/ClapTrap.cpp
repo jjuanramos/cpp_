@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:16:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 11:06:36 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 12:34:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,23 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_energy_pts--;
 		std::cout << "ClapTrap " << this->_name << " gets " << amount << " of hit points back. Hit points left: " << this->_hit_pts << std::endl;
 	}
+}
+
+int	ClapTrap::getHitPts() const
+{
+	return (this->_hit_pts);
+}
+
+int	ClapTrap::getEnergyPts() const
+{
+	return (this->_energy_pts);
+}
+
+int		ClapTrap::getAtkDmg() const
+{
+	return (this->_atk_dmg);
+}
+void	ClapTrap::setEnergyPts(int val)
+{
+	this->_energy_pts = val;
 }
