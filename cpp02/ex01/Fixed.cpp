@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:11:06 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/13 12:36:48 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 11:38:47 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ Fixed::Fixed(float const n): _value(static_cast<int>(roundf(n * (1 << this->_bit
 	std::cout << "Float constructor called"  << std::endl;
 }
 
-Fixed::Fixed(Fixed const& copy)
+Fixed::Fixed(Fixed const& copy): _value(copy.getRawBits())
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = copy.getRawBits();
 }
 
 Fixed::~Fixed()
