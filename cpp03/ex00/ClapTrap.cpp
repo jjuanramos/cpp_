@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:16:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 10:39:47 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 11:52:16 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hit_pts(10), _energy_pts(10)
 	std::cout << "Constructor for ClapTrap called!" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const& copy)
+ClapTrap::ClapTrap(ClapTrap const& copy): _name(copy.getName())
 {
 	std::cout << "Copy Constructor for ClapTrap called!" << std::endl;
-	this->_name = copy.getName();
 }
 
 ClapTrap::~ClapTrap()
@@ -43,10 +42,10 @@ std::string	ClapTrap::getName() const
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_hit_pts <= 0 || this->_energy_pts == 0)
-		std::cout << "No hit or energy points left. Can't attack :(" << std::endl;
+		std::cout << "No hit or energy points left. " << this->getName() << " can't attack :(" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_atk_dmg << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->_atk_dmg << " points of damage!" << std::endl;
 		this->_energy_pts--;
 	}
 }
