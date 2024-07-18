@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:42:33 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:40:26 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 16:10:26 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ Animal::Animal(std::string type): type(type)
 	std::cout << "Creating " << this->type << std::endl;
 }
 
-Animal::Animal(Animal const& copy)
+Animal::Animal(Animal const& copy): type(copy.getType())
 {
-	this->type = copy.getType();
 }
 
 Animal&	Animal::operator=(Animal const& other)

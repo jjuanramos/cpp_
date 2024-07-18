@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:54:30 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 15:56:00 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 16:04:19 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ class Brain
 private:
 	std::string	ideas[100];
 public:
-	Brain();
-	~Brain();
+				Brain();
+				Brain(Brain const& other);
+	Brain&		operator=(Brain const& other);
+				~Brain();
 };
 
 #endif

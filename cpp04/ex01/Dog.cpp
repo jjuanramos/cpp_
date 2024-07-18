@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:47:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:49:59 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 16:11:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ Dog::Dog(): Animal("Dog")
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const& copy)
-{
-	this->_brain = copy.getBrain();
-}
+Dog::Dog(Dog const& copy): _brain(copy.getBrain())
+{}
 
 Dog	Dog::operator=(Dog const& other)
 {

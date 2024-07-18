@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:44:20 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/17 16:47:38 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 16:11:19 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ Cat::Cat(): Animal("Cat")
 	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const& copy)
-{
-	this->_brain = copy.getBrain();
-}
+Cat::Cat(Cat const& copy): _brain(copy.getBrain())
+{}
 
 Cat	Cat::operator=(Cat const& other)
 {
