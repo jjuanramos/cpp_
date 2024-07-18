@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:46:49 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/18 12:49:09 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/18 12:53:33 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap(ScavTrap const &scav): ClapTrap(scav)
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const& scav)
 {
-	std::cout << "Equal Assignment Operator for ScavTrap called!" << std::endl;
+	std::cout << "Copy Assignment Operator for ScavTrap called!" << std::endl;
 	this->setName(scav.getName());
 	return (*this);
 }
