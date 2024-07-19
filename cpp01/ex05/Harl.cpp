@@ -6,13 +6,18 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:28:14 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/17 11:50:49 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/19 12:55:44 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl() {}
+Harl::Harl() {
+	this->ptr[0] = &Harl::debug;
+	this->ptr[1] = &Harl::info;
+	this->ptr[2] = &Harl::warning;
+	this->ptr[3] = &Harl::error;
+}
 
 Harl::~Harl() {}
 
@@ -45,24 +50,11 @@ void	Harl::complain(std::string level)
 	while (++val < 4)
 	{
 		if (!func_map[val].compare(level))
+		{
+			(this->*ptr[val])();
 			break ;
+		}
 	}
-	switch (val)
-	{
-	case 0:
-		h.debug();
-		break;
-	case 1:
-		h.info();
-		break;
-	case 2:
-		h.warning();
-		break;
-	case 3:
-		h.error();
-		break;
-	default:
-		std::cout << "Function not found. MEC" << std::endl;
-		break;
-	}
+	if (val == 4)
+		std::cout << "MEC. Function " << level << " not found." << std::endl;
 }
