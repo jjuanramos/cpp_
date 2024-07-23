@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:11:06 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/13 17:03:39 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/23 10:17:25 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ Fixed	Fixed::operator*(Fixed const& other)
 Fixed	Fixed::operator/(Fixed const& other)
 {
 	std::cout << "Division assignment operator called" << std::endl;
-	return (Fixed((this->toFloat() * other.toFloat())));
+	return (Fixed((this->toFloat() / other.toFloat())));
 }
 
 Fixed&	Fixed::operator++()
