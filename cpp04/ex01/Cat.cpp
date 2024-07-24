@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:44:20 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/24 12:30:34 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/24 12:37:17 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Cat	Cat::operator=(Cat const& other)
 
 Cat::~Cat()
 {
+	std::cout << "Cat destructor" << std::endl;
 	delete this->_brain;
 }
 

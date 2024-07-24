@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:47:52 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/24 12:30:30 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/24 12:37:29 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Dog	Dog::operator=(Dog const& other)
 
 Dog::~Dog()
 {
+	std::cout << "Dog destructor" << std::endl;
 	delete this->_brain;
 }
 

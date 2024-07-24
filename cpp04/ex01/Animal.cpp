@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:42:33 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/24 12:26:36 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/24 12:37:01 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal(std::string type): type(type)
 {
-	std::cout << "Creating " << this->type << std::endl;
+	std::cout << "Default constructor for Animal" << std::endl;
 }
 
 Animal::Animal(Animal const& copy): type(copy.getType())
@@ -31,7 +31,7 @@ Animal&	Animal::operator=(Animal const& other)
 
 Animal::~Animal()
 {
-	std::cout << "Destroying " << this->type << std::endl;
+	std::cout << "Animal destructor" << std::endl;
 }
 
 void	Animal::makeSound() const
