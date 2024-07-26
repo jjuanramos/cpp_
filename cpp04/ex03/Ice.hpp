@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 10:48:30 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 10:54:22 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 12:19:10 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Ice: public AMateria
 {
-private:
 public:
 					Ice();
 					~Ice();

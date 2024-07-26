@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:15:24 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/25 13:19:36 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 12:18:22 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,24 @@
 
 class IMateriaSource
 {
+public:
+	virtual 			~IMateriaSource() {}
+	virtual void 		learnMateria(AMateria* mat) = 0;
+	virtual AMateria*	createMateria(std::string const& type) = 0;
+};
+
+class MateriaSource: public IMateriaSource
+{
 private:
 	AMateria*	slots[4];
+	int			slotsSize;
 public:
-						IMateriaSource();
-						IMateriaSource(IMateriaSource const& copy);
-	IMateriaSource&		operator=(IMateriaSource const& other);
-	virtual 			~IMateriaSource() {}
-	virtual void 		learnMateria(AMateria*) = 0;
-	virtual AMateria*	createMateria(std::string const & type) = 0;
+						MateriaSource();
+						MateriaSource(MateriaSource const& copy);
+	MateriaSource&		operator=(MateriaSource const& other);
+	virtual 			~MateriaSource();
+	virtual void 		learnMateria(AMateria* mat);
+	virtual AMateria*	createMateria(std::string const& type);
 };
 
 #endif

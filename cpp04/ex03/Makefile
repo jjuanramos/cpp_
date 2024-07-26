@@ -6,14 +6,14 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/07/24 12:40:29 by juramos          ###   ########.fr        #
+#    Updated: 2024/07/26 12:24:44 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	amateria
 
 CXX 		= 	c++
-CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
+CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98
 
 SRC_FILES 	= 	main AMateria Ice Cure Character MateriaSource
 

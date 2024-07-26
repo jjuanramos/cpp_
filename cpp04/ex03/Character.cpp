@@ -6,48 +6,66 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:58:36 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 11:15:43 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 12:23:16 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-ICharacter::ICharacter(std::string const& name): name(name), slotsSize(0), thrashSize(0)
+Character::Character(std::string const& name): name(name), slotsSize(0), thrashSize(0)
 {
 }
 
-ICharacter::ICharacter(ICharacter const& copy): name(copy.getName())
+Character::Character(Character const& copy): name(copy.getName())
 {
-	if (this->slots)
-		delete [] this->slots;
+	if (this->slotsSize > 0)
+	{
+		int i = -1;
+		while (++i < this->slotsSize)
+			delete this->slots[i];
+	}
 	int	i = -1;
 	while (++i < copy.slotsSize)
 		this->slots[i] = (copy.slots[i])->clone();
 }
 
-ICharacter&	ICharacter::operator=(ICharacter const& other)
+Character&	Character::operator=(Character const& other)
 {
 	this->name = other.getName();
-	if (this->slots)
-		delete [] this->slots;
+	if (this->slotsSize > 0)
+	{
+		int i = -1;
+		while (++i < this->slotsSize)
+			delete this->slots[i];
+	}
 	int i = -1;
 	while (++i < other.slotsSize)
 		this->slots[i] = (other.slots[i])->clone();
 	return (*this);
 }
 
-ICharacter::~ICharacter()
+Character::~Character()
 {
-	delete [] this->slots;
-	delete [] this->thrash;
+	if (this->slotsSize > 0)
+	{
+		int i = -1;
+		while (++i < this->slotsSize)
+			delete this->slots[i];
+	}
+	if (this->thrashSize > 0)
+	{
+		int i = -1;
+		while (++i < this->thrashSize)
+			delete this->thrash[i];
+	}
 }
 
- std::string const& ICharacter::getName() const
+ std::string const& Character::getName() const
  {
 	return (this->name);
  }
 
- void	ICharacter::equip(AMateria* m)
+ void	Character::equip(AMateria* m)
  {
 	if (this->slotsSize < 3)
 	{
@@ -56,7 +74,7 @@ ICharacter::~ICharacter()
 	}
  }
 
- void	ICharacter::unequip(int idx)
+ void	Character::unequip(int idx)
  {
 	if (idx >= 0 && idx < 4 && this->slots[idx])
 	{
@@ -66,7 +84,7 @@ ICharacter::~ICharacter()
 	}
  }
 
- void	ICharacter::use(int idx, ICharacter& target)
+ void	Character::use(int idx, ICharacter& target)
  {
 	if (idx >= 0 && idx < 4 && this->slots[idx])
 		(this->slots[idx])->use(target);
