@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:06:33 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/25 14:05:35 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 11:14:31 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class ICharacter
 {
 private:
 	AMateria*					slots[4];
-	unsigned int				slotsSize;
+	AMateria*					thrash[100];
+	int							slotsSize;
+	int							thrashSize;
 	std::string					name;
 public:
 								ICharacter(std::string const& name);
