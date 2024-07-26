@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:15:24 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 12:18:22 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 12:55:51 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ class MateriaSource: public IMateriaSource
 {
 private:
 	AMateria*	slots[4];
+	AMateria*	thrash[100];
 	int			slotsSize;
+	int			thrashSize;
+	
 public:
 						MateriaSource();
 						MateriaSource(MateriaSource const& copy);

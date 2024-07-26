@@ -6,13 +6,13 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 11:26:41 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 12:25:56 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 13:01:40 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(): slotsSize(0)
+MateriaSource::MateriaSource(): slotsSize(0), thrashSize(0)
 {}
 MateriaSource::MateriaSource(MateriaSource const& copy)
 {
@@ -26,6 +26,7 @@ MateriaSource::MateriaSource(MateriaSource const& copy)
 	while (++i < copy.slotsSize)
 		this->slots[i] = copy.slots[i]->clone();
 }
+
 MateriaSource&		MateriaSource::operator=(MateriaSource const& other)
 {
 	if (this->slotsSize > 0)
@@ -39,6 +40,7 @@ MateriaSource&		MateriaSource::operator=(MateriaSource const& other)
 		this->slots[i] = other.slots[i]->clone();
 	return (*this);
 }
+
 MateriaSource::~MateriaSource()
 {
 	if (this->slotsSize > 0)
@@ -47,15 +49,28 @@ MateriaSource::~MateriaSource()
 		while (++i < this->slotsSize)
 			delete this->slots[i];
 	}
+	if (this->thrashSize > 0)
+	{
+		int i = -1;
+		while (++i < this->thrashSize)
+			delete this->thrash[i];
+	}
 }
+
 void 		MateriaSource::learnMateria(AMateria* mat)
 {
-	if (this->slotsSize < 3)
+	if (this->slotsSize < 4)
 	{
 		this->slots[this->slotsSize] = mat;
 		this->slotsSize++;
 	}
+	else
+	{
+		this->thrash[this->thrashSize] = mat;
+		this->thrashSize++;
+	}
 }
+
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	int	i = -1;

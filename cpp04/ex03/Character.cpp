@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:58:36 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 12:45:43 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 13:02:10 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,15 @@ Character::~Character()
 
  void	Character::equip(AMateria* m)
  {
-	if (this->slotsSize < 3)
+	if (this->slotsSize < 4)
 	{
 		this->slots[this->slotsSize] = m;
 		this->slotsSize++;
+	}
+	else
+	{
+		this->thrash[this->thrashSize] = m;
+		this->thrashSize++;
 	}
  }
 
@@ -103,6 +108,6 @@ Character::~Character()
 
  void	Character::use(int idx, ICharacter& target)
  {
-	if (idx >= 0 && idx < 4 && this->slots[idx])
+	if (idx >= 0 && idx < this->slotsSize)
 		(this->slots[idx])->use(target);
  }
