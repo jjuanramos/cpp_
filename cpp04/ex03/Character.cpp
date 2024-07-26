@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:58:36 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 12:23:16 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 12:45:43 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,30 @@ Character::~Character()
 	}
  }
 
+/*
+	If we have 4 values:
+		0, 1, 2, 3
+	And the user happens to unequip idx 1, then we should:
+		- Update slotsSize to 3 instead of 4
+		- Move 2 and 3 to 1 and 2
+	We could do that, by
+		int i = idx;
+		while (i < (this->slotsSize - 1))
+			this->slots[i] = this->slots[i + 1];
+			i++;
+		this->slotsSize--;
+*/
  void	Character::unequip(int idx)
  {
-	if (idx >= 0 && idx < 4 && this->slots[idx])
+	if (idx  >= 0 && idx < this->slotsSize)
 	{
 		this->thrash[this->thrashSize] = this->slots[idx];
 		this->slots[idx] = NULL;
+		int	i = idx - 1;
+		while (++i < (this->slotsSize - 1))
+			this->slots[i] = this->slots[i + 1];
 		this->thrashSize++;
+		this->slotsSize--;
 	}
  }
 
