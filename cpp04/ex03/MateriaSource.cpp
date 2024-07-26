@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 11:26:41 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/26 13:01:40 by juramos          ###   ########.fr       */
+/*   Updated: 2024/07/26 13:35:33 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void 		MateriaSource::learnMateria(AMateria* mat)
 	}
 }
 
-AMateria*	MateriaSource::createMateria(std::string const & type)
+AMateria*	MateriaSource::createMateria(std::string const& type)
 {
 	int	i = -1;
 	while (++i < this->slotsSize)
