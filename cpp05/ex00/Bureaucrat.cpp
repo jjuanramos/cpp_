@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/08/01 11:17:05 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:20:03 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(std::string name, int range): _name(name), _range(range)
 		throw Bureaucrat::GradeTooHighException();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const& copy): Bureaucrat(copy.getName(), copy.getRange())
+Bureaucrat::Bureaucrat(Bureaucrat const& copy): _name(copy.getName()), _range(copy.getRange())
 {}
 
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& other)
