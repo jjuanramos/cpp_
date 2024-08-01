@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:59:24 by juramos           #+#    #+#             */
-/*   Updated: 2024/08/01 11:58:29 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:25:52 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 	std::string	_target;
 public:
 	PresidentialPardonForm(std::string _target);
-	~PresidentialPardonForm();
+	virtual	~PresidentialPardonForm();
 	virtual std::string	getTarget() const;
 	virtual	void	run() const;
 };

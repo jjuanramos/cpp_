@@ -6,14 +6,28 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:40:16 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:18:40 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:22:36 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-Intern::Intern(/* args */)
+Intern::Intern()
 {
+	 this->forms[0] = "robotomy request";
+	 this->forms[1] = "presidential pardon";
+	 this->forms[2] = "shrubbery creation";
+}
+
+Intern::Intern(Intern const& copy)
+{
+	(void)copy;
+}
+
+Intern&	Intern::operator=(Intern const& other)
+{
+	(void)other;
+	return (*this);
 }
 
 Intern::~Intern()
@@ -22,24 +36,25 @@ Intern::~Intern()
 
 AForm*	Intern::makeForm(std::string name, std::string target) const
 {
-	std::map<std::string, int>	AForm_map;
-	AForm_map["robotomy request"] = 1;
-	AForm_map["presidential pardon"] = 2;
-	AForm_map["shrubbery creation"] = 3;
-
-	std::map<std::string, int>::iterator it = AForm_map.find(name);
-	if (it != AForm_map.end())
+	int	i = 0;
+	while (i < 4)
 	{
-		switch(it->second)
+		if (!this->forms[i].compare(name)) 
+			break ;
+		i++;
+	}
+	switch(i)
+	{
+		case(0):
+			return (new RobotomyRequestForm(target));
+		case (1):
+			return (new PresidentialPardonForm(target));
+		case (2):
+			return (new ShrubberyCreationForm(target));
+		default:
 		{
-			case(1):
-				return (new RobotomyRequestForm(target));
-			case (2):
-				return (new PresidentialPardonForm(target));
-			case (3):
-				return (new ShrubberyCreationForm(target));
+			std::cout << "Form " << name << " not found. Returning NULL." << std::endl;
+			return (NULL);
 		}
 	}
-	std::cout << "Form " << name << " not found. Returning NULL." << std::endl;
-	return (NULL);
 }
