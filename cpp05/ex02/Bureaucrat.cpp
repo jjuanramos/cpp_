@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 14:43:33 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:46:23 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,30 @@ Bureaucrat::Bureaucrat(std::string name, int range): _name(name), _range(range)
 		throw Bureaucrat::GradeTooHighException();
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const& copy): _name(copy.getName()), _range(copy.getRange())
+{}
+
+Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& other)
+{
+	this->_range = other.getRange();
+	return (*this);
+}
+
 Bureaucrat::~Bureaucrat()
 {
 }
 
-void	Bureaucrat::signForm(AForm& f, std::string reason)
+void	Bureaucrat::signForm(AForm& f)
 {
-	if (f.getIsSigned())
+	try
+	{
+		f.beSigned(*this);
 		std::cout << this->getName() << " signed " << f.getName() << std::endl;
-	else
-		std::cout << this->getName() << " couldn't sign " << f.getName() << " because " << reason << std::endl;
+	}
+	catch(const AForm::GradeTooLowException& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
