@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:12:49 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 14:38:04 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:48:23 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ private:
 	int const			_signing_grade;
 	int const			_executing_grade;
 public:
-	AForm(std::string const _name, int const _signing_grade, int const _executing_grade);
-	~AForm();
+				AForm(std::string const _name, int const _signing_grade, int const _executing_grade);
+				AForm(AForm const& copy);
+	AForm&		operator=(AForm const& other);
+				~AForm();
 	std::string	getName() const;
 	virtual 	std::string	getTarget() const = 0;
 	bool		getIsSigned() const;
@@ -42,6 +44,7 @@ public:
 	public:
 		virtual const char*	what() const throw();
 	};
+
 	class 		GradeTooLowException : public std::exception
 	{
 	public:
