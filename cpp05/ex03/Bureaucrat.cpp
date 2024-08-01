@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:10:02 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:02:30 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,30 @@ Bureaucrat::Bureaucrat(std::string name, int range): _name(name), _range(range)
 		throw Bureaucrat::GradeTooHighException();
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const& copy): _name(copy.getName()), _range(copy.getRange())
+{}
+
+Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& other)
+{
+	this->_range = other.getRange();
+	return (*this);
+}
+
 Bureaucrat::~Bureaucrat()
 {
 }
 
-void	Bureaucrat::signAForm(AForm& f, std::string reason)
+void	Bureaucrat::signForm(AForm& f)
 {
-	if (f.getIsSigned())
+	try
+	{
+		f.beSigned(*this);
 		std::cout << this->getName() << " signed " << f.getName() << std::endl;
-	else
-		std::cout << this->getName() << " couldn't sign " << f.getName() << " because " << reason << std::endl;
+	}
+	catch(const AForm::GradeTooLowException& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
@@ -62,16 +76,20 @@ Bureaucrat&	Bureaucrat::operator--() {
 	return (*this);
 }
 
-void	Bureaucrat::executeAForm(AForm const& AForm) const
+void	Bureaucrat::executeForm(AForm const& form) const
 {
 	try
 	{
-		if (AForm.checkAndExecute(*this))
-			std::cout << this->getName() << " executed " << AForm.getName() << std::endl;
+		if (form.execute(*this))
+			std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch (AForm::GradeTooLowException& e)
 	{
 		std::cout << e.what() << " for bureaucrat " << this->getName() << std::endl;
+	}
+	catch (AForm::FormNotSigned& e)
+	{
+		std::cout << e.what() << ", bureaucrat " << this->getName() << " can't execute it" << std::endl;
 	}
 }
 

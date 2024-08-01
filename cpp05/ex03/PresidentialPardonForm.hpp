@@ -6,12 +6,12 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:59:24 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:11:39 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:58:29 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PresidentialPardonForm_H
-#define PresidentialPardonForm_H
+#ifndef PRESIDENTIALPARDONFORM_H
+#define PRESIDENTIALPARDONFORM_H
 
 #include "AForm.hpp"
 
@@ -23,7 +23,7 @@ public:
 	PresidentialPardonForm(std::string _target);
 	~PresidentialPardonForm();
 	virtual std::string	getTarget() const;
-	virtual	void	execute(Bureaucrat const& executor) const;
+	virtual	void	run() const;
 };
 
 #endif

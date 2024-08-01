@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:11:48 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:16:30 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:02:15 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,19 @@ std::string	ShrubberyCreationForm::getTarget() const
 	return (this->_target);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
+void ShrubberyCreationForm::run() const
 {
-	if (this->getIsSigned())
-	{
-		std::string		filename = this->getTarget() + "_shrubbery";
-		std::ofstream	outfile(filename);
+	std::string		filename = this->getTarget() + "_shrubbery";
+	std::ofstream	outfile(filename.c_str());
 
-		outfile << "       _-_" << std::endl;
-		outfile << "    /~~   ~~\\" << std::endl;
-		outfile << " /~~         ~~\\" << std::endl;
-		outfile << "{               }" << std::endl;
-		outfile << " \\  _-     -_  /" << std::endl;
-		outfile << "   ~  \\\\ //  ~" << std::endl;
-		outfile << "_- -   | | _- _" << std::endl;
-		outfile << "  _ -  | |   -_" << std::endl;
-		outfile << "      // \\\\" << std::endl;
-		outfile.close();
-	}
-	(void)executor;
+	outfile << "       _-_" << std::endl;
+	outfile << "    /~~   ~~\\" << std::endl;
+	outfile << " /~~         ~~\\" << std::endl;
+	outfile << "{               }" << std::endl;
+	outfile << " \\  _-     -_  /" << std::endl;
+	outfile << "   ~  \\\\ //  ~" << std::endl;
+	outfile << "_- -   | | _- _" << std::endl;
+	outfile << "  _ -  | |   -_" << std::endl;
+	outfile << "      // \\\\" << std::endl;
+	outfile.close();
 }

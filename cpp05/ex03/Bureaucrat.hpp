@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:30:21 by juramos           #+#    #+#             */
-/*   Updated: 2024/07/01 10:10:02 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:46:11 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,23 @@ private:
 	std::string const	_name;
 	int					_range;
 public:
-	Bureaucrat(std::string name, int range);
-	~Bureaucrat();
+				Bureaucrat(std::string name, int range);
+				Bureaucrat(Bureaucrat const& copy);
+	Bureaucrat&	operator=(Bureaucrat const& other);
+				~Bureaucrat();
 	std::string	getName() const;
 	int			getRange() const;
-	void		signAForm(AForm& f, std::string reason);
+	void		signForm(AForm& f);
 	Bureaucrat&	operator++();
 	Bureaucrat&	operator--();
-	void		executeAForm(AForm const& AForm) const;
+	void		executeForm(AForm const& form) const;
 
 	class GradeTooHighException : public std::exception
 	{
 	public:
 		virtual const char* what() const throw();
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 	public:
