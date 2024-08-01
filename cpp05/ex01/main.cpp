@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:30:04 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 11:40:05 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:42:30 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,10 @@ int	main()
 		Form		Stupid("Stupid", 5, 10);
 		Form		Coolio("Coolio", 1, 20);
 
-		Stupid.beSigned(Mike);
-		try
-		{
-			Coolio.beSigned(Mike);
-		}
-		catch (Form::GradeTooLowException& e)
-		{
-			Mike.signForm(Coolio, e.what());
-		}
+		Mike.signForm(Stupid);
+		Mike.signForm(Coolio);
+
+		Bureaucrat	Charles("Charles", 0);
 	}
 	catch (Bureaucrat::GradeTooHighException& e)
 	{

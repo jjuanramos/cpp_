@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:30:21 by juramos           #+#    #+#             */
-/*   Updated: 2024/08/01 11:23:03 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:43:35 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 				~Bureaucrat();
 	std::string	getName() const;
 	int			getRange() const;
-	void		signForm(Form& f, std::string reason);
+	void		signForm(Form& f);
 	Bureaucrat&	operator++();
 	Bureaucrat&	operator--();
 
@@ -40,6 +40,7 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 	public:

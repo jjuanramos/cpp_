@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:16:22 by juramos           #+#    #+#             */
-/*   Updated: 2024/06/28 11:47:08 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:41:23 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@ Form::Form(std::string const _name, int const _signing_grade,
 		_name(_name), _is_signed(false), _signing_grade(_signing_grade),
 		_executing_grade(_executing_grade)
 {
+}
+
+Form::Form(Form const& copy): _name(copy.getName()), _is_signed(copy.getIsSigned()),
+	_signing_grade(copy.getSigningGrade()), _executing_grade(copy.getExecutingGrade())
+{
+}
+
+Form&	Form::operator=(Form const& other)
+{
+	this->_is_signed = other.getIsSigned();
+	return(*this);
 }
 
 Form::~Form()
