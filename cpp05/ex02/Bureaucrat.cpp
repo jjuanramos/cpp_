@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 10:39:25 by juramos           #+#    #+#             */
-/*   Updated: 2024/08/01 11:46:23 by juramos          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:02:30 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,16 @@ void	Bureaucrat::executeForm(AForm const& form) const
 {
 	try
 	{
-		if (form.checkAndExecute(*this))
+		if (form.execute(*this))
 			std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch (AForm::GradeTooLowException& e)
 	{
 		std::cout << e.what() << " for bureaucrat " << this->getName() << std::endl;
+	}
+	catch (AForm::FormNotSigned& e)
+	{
+		std::cout << e.what() << ", bureaucrat " << this->getName() << " can't execute it" << std::endl;
 	}
 }
 
