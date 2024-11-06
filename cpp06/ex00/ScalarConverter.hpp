@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:30:31 by juramos           #+#    #+#             */
-/*   Updated: 2024/11/06 12:05:45 by juramos          ###   ########.fr       */
+/*   Updated: 2024/11/06 17:50:38 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ struct DataTypes {
 	int			i;
 	float		f;
 	double		d;
-	long long	l;
 
 	bool		i_out_of_range;
 	bool		i_impossible;
@@ -39,5 +38,10 @@ class	ScalarConverter
 	public:
 		static void	convert(std::string const &literal);
 };
+
+char	getType(std::string const &literal);
+void	printValues(DataTypes const &data);
+bool	isPseudoLiteral(std::string const &literal, DataTypes &data);
+bool	isOutOfRange(std::string const &literal);
 
 #endif

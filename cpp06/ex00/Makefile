@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/11/06 12:09:18 by juramos          ###   ########.fr        #
+#    Updated: 2024/11/06 17:28:07 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME 		= 	scalarconverter
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
-SRC_FILES 	= 	main ScalarConverter
+SRC_FILES 	= 	main ScalarConverter types
 
 OBJ_DIR 	= 	obj/
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
