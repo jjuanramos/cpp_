@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:30:31 by juramos           #+#    #+#             */
-/*   Updated: 2024/11/06 17:50:38 by juramos          ###   ########.fr       */
+/*   Updated: 2024/11/06 18:10:36 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	getType(std::string const &literal);
 void	printValues(DataTypes const &data);
 bool	isPseudoLiteral(std::string const &literal, DataTypes &data);
 bool	isOutOfRange(std::string const &literal);
+bool	hasIntEnd(double value);
 
 #endif

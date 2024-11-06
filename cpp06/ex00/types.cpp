@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:26:54 by juramos           #+#    #+#             */
-/*   Updated: 2024/11/06 17:50:49 by juramos          ###   ########.fr       */
+/*   Updated: 2024/11/06 18:07:13 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static bool	isChar(std::string const &literal)
 {
 	if (literal.size() == 1 && !isdigit(literal[0])
-		&& (literal[0] >= CHAR_MIN && literal[0] <= CHAR_MAX))
+		&& (literal[0] >= 0 && literal[0] <= 127))
 		return (true);
 	return (false);
 }

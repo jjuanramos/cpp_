@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:30:28 by juramos           #+#    #+#             */
-/*   Updated: 2024/11/06 17:55:04 by juramos          ###   ########.fr       */
+/*   Updated: 2024/11/06 18:10:22 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ScalarConverter::convert(std::string const &literal)
 			else
 			{
 				data.i = std::stoi(literal);
-				if (data.i >= CHAR_MIN && data.i <= CHAR_MAX)
+				if (data.i >= 0 && data.i <= 127)
 					data.c = static_cast<char>(data.i);
 				else
 					data.c_non_displayable = true;
@@ -118,7 +118,7 @@ void	printValues(DataTypes const &data)
 	else if (data.c_non_displayable)
 		std::cout << "non displayable";
 	else
-		std::cout << data.c;
+		std::cout << "'" << data.c << "'";
 	std::cout << std::endl;
 	std::cout << "int: ";
 	if (data.i_out_of_range)
@@ -130,10 +130,21 @@ void	printValues(DataTypes const &data)
 	std::cout << std::endl;
 	std::cout << "float: ";
 	std::cout << data.f;
+	if (hasIntEnd(data.d))
+		std::cout << ".0";
 	std::cout << "f" << std::endl;
 	std::cout << "double: ";
 	std::cout << data.d;
+	if (hasIntEnd(data.d))
+		std::cout << ".0";
 	std::cout << std::endl;
+}
+
+bool	hasIntEnd(double value)
+{
+	if (value == static_cast<int>(value))
+		return (true);
+	return (false);
 }
 
 bool	isPseudoLiteral(std::string const &literal, DataTypes &data)
