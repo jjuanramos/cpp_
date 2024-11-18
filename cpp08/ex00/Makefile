@@ -6,11 +6,11 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/11/18 17:49:22 by juramos          ###   ########.fr        #
+#    Updated: 2024/11/18 17:40:02 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= 	array
+NAME 		= 	easyfind
 
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
