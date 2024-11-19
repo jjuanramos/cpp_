@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 16:59:46 by juramos           #+#    #+#              #
-#    Updated: 2024/11/18 17:55:15 by juramos          ###   ########.fr        #
+#    Updated: 2024/11/19 17:16:17 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME 		= 	span
 CXX 		= 	c++
 CXX_FLAGS 	= 	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
-SRC_FILES 	= 	main
+SRC_FILES 	= 	main Span
 
 OBJ_DIR 	= 	obj/
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

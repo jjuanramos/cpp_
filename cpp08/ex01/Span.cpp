@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:21:34 by juramos           #+#    #+#             */
-/*   Updated: 2024/11/18 18:57:51 by juramos          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:31:17 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,25 @@ const char	*Span::LessThanTwo::what(void) const throw()
 	return "Span contains less than two values";
 }
 Span::Span(void): _N(0) {}
+
 Span::Span(unsigned int N): _N(N) {}
-Span::Span(Span &toCopy) {
-	*this = toCopy;
+
+Span::Span(const Span &toCopy) {
+	_N = toCopy._N;
+	_lst = toCopy._lst;
 }
-Span	&Span::operator=(Span &other) {
+Span	&Span::operator=(const Span &other) {
 	if (this != &other)
 	{
-		_N = other.getN();
-		_lst.swap(other.getLst());
+		_N = other._N;
+		_lst = other._lst;
 	}
 	return (*this);
 }
 Span::~Span() {}
 void	Span::addNumber(unsigned int const n)
 {
-	if (_lst.size() == _N - 1)
+	if (_lst.size() == _N)
 		throw SpanComplete();
 	_lst.insert(n);
 }
@@ -60,4 +63,13 @@ unsigned int	Span::longestSpan(void)
 	if (_lst.size() < 2)
 		throw LessThanTwo();
 	return *_lst.rbegin() - *_lst.begin();
+}
+
+unsigned int	Span::getN(void) const
+{
+	return _N;
+}
+const std::set<unsigned int>	&Span::getLst(void) const
+{
+	return _lst;
 }
